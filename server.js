@@ -10,6 +10,7 @@ var runner            = require('./test-runner');
 require('dotenv').config() 
 
 var app = express();
+app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }))
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
